@@ -1,4 +1,3 @@
-prepool_reads	barcodePrepoolYeast_BAC_library_151to180
 prepool_readlength	101
 prepool_fragmentlength	130
 barcode_length_standard	20
@@ -18,7 +17,5 @@ site_prepool	CTCGAG
 left_anchor	47
 right_anchor	25
 middle	CGACTCGAGCCC
-leftpostpool_reads	Yeast_BAC_library_row-h.extendedFrags.fastqclean
 postpool_readlength	126
 postpool_fragmentlength	184
-flash_dir	/Share/home/liuxiao/software/FLASH-1.2.10
