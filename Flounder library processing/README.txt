@@ -29,7 +29,7 @@ perl barcodePostpool.pl configure_pool.txt
 
 Pipeline to process flounder BAC-PE data
 ##Pipeline input: flounder_BAC_PE_part<1/2/3>_<L/R>_<1/2>.fastq: raw read files.
-                  configure_BAC.txt: the prefix of raw read files should be added to the line "left_reads" and "right_reads". Other parameters have already been set.
+                  configure_BAC.txt: configeration file. the prefix of raw read files should be added to the line "left_reads" and "right_reads". Other parameters have already been set.
 ##Pipeline output: barcodepairDistanceflounder_BAC_PE_part1_Lflounder_BAC_PE_part1_RbarcodePostpoolflounder_BAC_barcodepair_part1.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 
 #Merge mates of mated reads using FLASH
 perl flashBarcode.pl configure_BAC.txt left
