@@ -72,4 +72,23 @@ perl system.pl filename.txt configure_pooling.txt
 #To locate BAC by barcode
 perl 3Dcross.pl <threshold, 0.01 or 0.05 recommended>
 
-explanation
+Configeration file explanation
+1. configure_pool.txt
+prepool/postpool_reads: raw read file prefix
+prepool/postpool_readlength: raw read readlength
+prepool/postpool_fragmentlength: expected readlength after merging
+barcode_length_standard: expected barcode length
+barcode_length_min: minimal barcode length
+barcode_length_max：maximal barcode length
+SQ_threshold: minimal sequencing quality requirement of barcode sequence
+prepool/postpool_left_upstream: vector sequence upstream of left barcode
+prepool/postpool_left_downstream: vector sequence downstream of left barcode
+prepool/postpool_right_upstream: vector sequence upstream of right barcode
+prepool/postpool_right_downstream: vector sequence downstream of right barcode
+site_prepool: endonuclease cut site used for inverse PCR
+prepool/postpool_left_anchor: expected vector sequence length on the 5' end of merged reads
+prepool/postpool_right_anchor: expected vector sequence length on the 3' end of merged reads
+2. configure_BAC.txt
+genome: reference sequence prefix
+left/right_reads: raw read file prefix
+pool_file: prefix of the file that lists barcode pair relation
