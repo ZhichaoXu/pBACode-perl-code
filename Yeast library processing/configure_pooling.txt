@@ -1,0 +1,24 @@
+prepool_reads	barcodePrepoolYeast_BAC_library_151to180
+prepool_readlength	101
+prepool_fragmentlength	130
+barcode_length_standard	20
+barcode_length_min	4
+barcode_length_max	30
+pool_distance	1
+pool_distance_internal_prepool	3
+pool_distance_internal_postpool	2
+SQ_threshold	20
+pool_variance	3
+left_upstream	GGGGCTCCCAC
+left_downstream	GATCCGCTA
+
+right_upstream	GCAAGCTTC
+right_downstream	GTGGGAGCCTC
+site_prepool	CTCGAG
+left_anchor	47
+right_anchor	25
+middle	CGACTCGAGCCC
+leftpostpool_reads	Yeast_BAC_library_row-h.extendedFrags.fastqclean
+postpool_readlength	126
+postpool_fragmentlength	184
+flash_dir	/Share/home/liuxiao/software/FLASH-1.2.10

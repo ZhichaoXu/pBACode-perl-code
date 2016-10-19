@@ -1,0 +1,19 @@
+barcode_length_standard	20
+barcode_length_min	4
+barcode_length_max	30
+pool_distance	1
+pool_distance_internal_prepool	3
+pool_distance_internal_postpool	2
+SQ_threshold	20
+pool_variance	3
+left_upstream	TCACGCGTCTC
+left_downstream	GACTCGAGA
+
+right_upstream	GCAAGCTTC
+right_downstream	GTGGGAGCCTC
+site_prepool	CTCGAG
+left_anchor	40
+right_anchor	25
+middle	CGACTCGAGCCC
+postpool_readlength	126
+postpool_fragmentlength	184
