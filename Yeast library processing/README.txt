@@ -60,7 +60,6 @@ perl barcodepairDistance.pl configure_BAC.txt
 ##Pipeline input: Yeast_BAC_PE_<L/R>_<1/2>.fastq, the prefix of input file should be added to the file named configure_BAC.txt on the line behind "left_reads" and "right_reads". Other parameters are already set.
 ##Pipeline output: 1. barcodepairDistanceYeast_BAC_PE_LYeast_BAC_PE_RbarcodePostpoolYeast_BAC_barcodepair.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 2. groupAssemblyYeast_BAC_PE_<L/R>CorrectedUniqueInpool.fa, local assembly result in fasta format, barcode sequence are used as assembly sequence id.
 
-
 Pipeline to locate BAC by barcode in 3D
 #To extract barcodes
 perl system.pl filename.txt configure_pooling.txt
