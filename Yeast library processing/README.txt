@@ -15,7 +15,7 @@ perl barcodePrepool.pl configure_pool.txt
 #Bootstrapping
 perl bootstrap_1.pl configure_pool.txt
 ##Pipeline input: Yeast_BAC_barcodepair_bootstrap_only_<1/2>.fastq, the prefix of input file should be added to the file named configure_pool.txt on the line behind "prepool_reads". Other parameters are already set.
-##Pipeline output: barcodePrepoolYeast_BAC_barcodepair_bootstrap_only.txt, format: <left barcode>:<rightbarcode>[TAB]read count
+##Pipeline output: barcodePrepoolYeast_BAC_barcodepair_bootstrap_only.txt, format: <left barcode>:<rightbarcode>[TAB]<read count>
 
 Pipeline to extract barcode pairs from BAC library using pBACode-1
 #Merge mates of mated reads using FLASH
@@ -25,7 +25,7 @@ perl barcodeRMvectorSitePost.pl configure_pool.txt
 #Clean sequencing error and hybrid barcode pairs
 perl barcodePostpool.pl configure_pool.txt
 ##Pipeline input: Yeast_BAC_barcodepair_<1/2>.fastq, the prefix of input file should be added to the file named configure_pool.txt on the line behind "postpool_reads". Other parameters are already set.
-##Pipeline output: barcodePostpoolYeast_BAC_barcodepair.txt, format: <left barcode>:<rightbarcode>[TAB]read count
+##Pipeline output: barcodePostpoolYeast_BAC_barcodepair.txt, format: <left barcode>:<rightbarcode>[TAB]<read count>
 
 Pipeline to process yeast BAC-PE data
 #Merge mates of mated reads using FLASH
