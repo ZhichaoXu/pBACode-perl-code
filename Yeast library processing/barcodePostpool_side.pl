@@ -20,8 +20,7 @@ while(<CF>){
 	}
 }
 #my $fq = $cf{$lr."postpool_reads"};
-my $fq = $ARGV[2];
-my $poolFile = 'barcodePrepool'.$cf{"prepool_reads"}.'.txt';
+my $fq = $ARGV[2]; 
 my (@barcode, @barcode1bpMid, @convert, @lines, @readNumShort, @readNumMid, @readNumLong, @t, %barcode, %count, %doubt, %mismatchL, %mismatchR, %t, %tl, %tr, %ttl, %ttr, $barcode, $bh, $bl, $br, $i, $j, $k, $l1, $l2, $num, $readNum, $rmL, $rmR, $t) = ();
 my ($BARCODELEN, $BARCODELENMIN, $BARCODELENMAX, $DS, $DSinternal) = ($cf{"barcode_length_standard"}, $cf{"barcode_length_min"}, $cf{"barcode_length_max"}, $cf{"pool_distance"}, $cf{"pool_distance_internal_postpool"});
 my $CONVERTLEN = $BARCODELEN/2 - 2;
