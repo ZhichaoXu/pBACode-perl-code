@@ -64,6 +64,12 @@ perl barcodeLoci.pl configure_BAC.txt right
 perl flounderchrLen.pl configure_BAC.txt
 perl barcodepairDistance.pl configure_BAC.txt
 
+Pipeline to generate input for SSPACE assembler
+##Pipeline output: barcodepairreadflounder_BAC_PE_part<1/2/3>_Lflounder_BAC_PE_part<1/2/3>_R.tab.txt, tab delimited file for SSPACE input
+perl barcoderead.pl configure_BAC.txt left
+perl barcoderead.pl configure_BAC.txt right
+perl barcodepairread_coordinate.pl configure_BAC.txt
+
 Pipeline to locate BAC by barcode in 5D
 ##Pipeline input: all fastq file names should be add to the file named filename.txt. Other parameters are already set.
 ##Pipeline output: Flatfish_BAC_library_3Dcross_cutoff_<threshold>.out, format: <Clone location>[TAB]<left barcode>
