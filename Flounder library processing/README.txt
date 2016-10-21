@@ -3,6 +3,7 @@ Prerequisites:
 2.bowtie2-2.1.0
 3.SEED
 4.ALLPATHS-LG
+5.SSPACE
 Install the five tools and add them to the environment variable of Linux system.
 Download dataset from NCBI BioProject (https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=344006) to this folder.
 
@@ -29,15 +30,12 @@ perl barcodeRMvectorSitePost.pl configure_pool.txt
 perl barcodePostpool.pl configure_pool.txt
 
 ALLPATHS-LG assembly
-input_groups.csv content:
-group_name,library_name,file_name
-flounder_220, flounder_220,./flounder_raw_?.fastq
-flounder_2800, flounder_2800,./flounder_3kb_matepair_?.fastq
-input_libraries.csv content:
-library_name, project_name, organism_name, type, paired, frag_size, frag_stddev, insert_size, insert_stddev, read_orientation, genomic_start, genomic_end 
-flounder_220,flounder_genome_assembly,flounder,fragment,1,220,50,,,inward,0,0
-flounder_2800,flounder_genome_assembly,flounder,jumping,1,,,2750,500,outward,0,0
-Rest of parameters of ALLPATHS-LG are default.
+#Configuration files for ALLPATHS-LG assembly: input_groups.csv and input_libraries.csv
+ulimit -s 100000
+mkdir -p flounder.genome/data
+PrepareAllPathsInputs.pl DATA_DIR=$PWD/flounder.genome/data PLOIDY=1 IN_GROUPS_CSV=input_groups.csv IN_LIBS_CSV=input_libraries.csv OVERWRITE=True | tee prepare.out
+ulimit -s 100000
+RunAllPathsLG PRE=$PWD REFERENCE_NAME=flounder.genome DATA_SUBDIR=data RUN=run SUBDIR=test OVERWRITE=True MAXPAR=8 | tee -a assemble.out
 
 Pipeline to process flounder BAC-PE data
 ##Pipeline input: flounder_BAC_PE_part<1/2/3>_<L/R>_<1/2>.fastq: raw read files.
