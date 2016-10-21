@@ -1,0 +1,8 @@
+max_rd_len=126
+[LIB]
+avg_ins=225
+reverse_seq=0
+asm_flags=3
+rank=1
+q1=/home/xzc/yeast_genome_assembly/Yeast_raw_q64_rmadapt_1.clean.fq.cor.pair_50x_1.fq
+q2=/home/xzc/yeast_genome_assembly/Yeast_raw_q64_rmadapt_2.clean.fq.cor.pair_50x_2.fq
