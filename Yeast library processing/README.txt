@@ -31,7 +31,8 @@ perl barcodePostpool.pl configure_pool.txt
 
 Pipeline to process yeast BAC-PE data
 ##Pipeline input: Yeast_BAC_PE_<L/R>_<1/2>.fastq: raw read files. 
-                  configure_BAC.txt: configeration file. the prefix of raw read files should be added to the line "left_reads" and "right_reads". Other parameters have already been set.
+                  barcodePostpoolYeast_BAC_barcodepair.txt： barcode pair file
+                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". Other parameters have already been set.
 ##Pipeline output: barcodepairDistanceYeast_BAC_PE_LYeast_BAC_PE_RbarcodePostpoolYeast_BAC_barcodepair.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 
                    groupAssemblyYeast_BAC_PE_<L/R>CorrectedUniqueInpool.fa, local assembly result in fasta format, barcode sequences are used as assembly sequence IDs.
 #Merge mates of mated reads using FLASH
@@ -65,7 +66,7 @@ perl S288CchrLen.pl configure_BAC.txt
 perl barcodepairDistance.pl configure_BAC.txt
 
 Pipeline to locate BAC by barcode in 3D
-##Pipeline input: all fastq file names should be add to the file named filename.txt. Other parameters are already set.
+##Pipeline input:  filename.txt. All 36 pooled BAC fastq file names should be add to the file. Other parameters are already set.
 ##Pipeline output: Yeast_BAC_library_3Dcross_cutoff_<threshold>.out, format: <Clone location>[TAB]<left barcode>
 #To extract barcodes
 perl system.pl filename.txt configure_pooling.txt
