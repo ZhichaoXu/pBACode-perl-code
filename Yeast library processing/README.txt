@@ -2,7 +2,9 @@ Prerequisites:
 1.FLASH-1.2.6
 2.bowtie2-2.1.0
 3.PHRAP
-Install the three tools and add them to the environment variable of Linux system.
+4.SOAPdenovo2
+5.SSPACE
+Install the five tools and add them to the environment variable of Linux system.
 Download dataset from NCBI BioProject PRJNA341910 (https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=341910) to this folder.
 
 Pipeline to extract barcode pairs from the cloning vector pool of pBACode-1
@@ -28,6 +30,9 @@ perl PEflash101.pl configure_pool.txt postpool
 perl barcodeRMvectorSitePost.pl configure_pool.txt
 #Clean sequencing error and hybrid barcode pairs
 perl barcodePostpool.pl configure_pool.txt
+
+SOAPdenovo2 assembly
+SOAPdenovo-127mer all -s soapdenovo_config_file -o yeast -K 81 -R -p 8 -L 500
 
 Pipeline to process yeast BAC-PE data
 ##Pipeline input: Yeast_BAC_PE_<L/R>_<1/2>.fastq: raw read files. 
