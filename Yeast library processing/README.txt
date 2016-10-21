@@ -38,7 +38,7 @@ SOAPdenovo-127mer all -s soapdenovo_config_file -o yeast -K 81 -R -p 8 -L 500
 Pipeline to process yeast BAC-PE data
 ##Pipeline input: Yeast_BAC_PE_<L/R>_<1/2>.fastq: raw read files. 
                   barcodePostpoolYeast_BAC_barcodepair.txt： barcode pair file
-                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". Other parameters have already been set.
+                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". The prefix of reference sequence file should be added to the line "genome". Other parameters have already been set.
 ##Pipeline output: barcodepairDistanceYeast_BAC_PE_LYeast_BAC_PE_RbarcodePostpoolYeast_BAC_barcodepair.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 
                    groupAssemblyYeast_BAC_PE_<L/R>CorrectedUniqueInpool.fa, local assembly result in fasta format, barcode sequences are used as assembly sequence IDs.
 #Merge mates of mated reads using FLASH
