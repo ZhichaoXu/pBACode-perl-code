@@ -2,7 +2,8 @@ Prerequisites:
 1.FLASH-1.2.6
 2.bowtie2-2.1.0
 3.SEED
-Install the three tools and add them to the environment variable of Linux system.
+4.ALLPATHS-LG
+Install the five tools and add them to the environment variable of Linux system.
 Download dataset from NCBI BioProject (https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=344006) to this folder.
 
 Pipeline to extract barcode pairs from the cloning vector pool of pBACode-2
@@ -26,6 +27,17 @@ perl PEflash101.pl configure_pool.txt postpool
 perl barcodeRMvectorSitePost.pl configure_pool.txt
 #Clean sequencing error and hybrid barcode pairs
 perl barcodePostpool.pl configure_pool.txt
+
+ALLPATHS-LG assembly
+input_groups.csv content:
+group_name,library_name,file_name
+flounder_220, flounder_220,./flounder_raw_?.fastq
+flounder_2800, flounder_2800,./flounder_3kb_matepair_?.fastq
+input_libraries.csv content:
+library_name, project_name, organism_name, type, paired, frag_size, frag_stddev, insert_size, insert_stddev, read_orientation, genomic_start, genomic_end 
+flounder_220,flounder_genome_assembly,flounder,fragment,1,220,50,,,inward,0,0
+flounder_2800,flounder_genome_assembly,flounder,jumping,1,,,2750,500,outward,0,0
+Rest of parameters of ALLPATHS-LG are default.
 
 Pipeline to process flounder BAC-PE data
 ##Pipeline input: flounder_BAC_PE_part<1/2/3>_<L/R>_<1/2>.fastq: raw read files.
