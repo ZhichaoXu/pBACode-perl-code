@@ -1,0 +1,15 @@
+max_rd_len=126
+[LIB]
+avg_ins=225
+reverse_seq=0
+asm_flags=3
+rank=1
+q1=./Yeast_q64_1.fastq
+q2=./Yeast_q64_2.fastq
+[LIB]
+avg_ins=3000
+reverse_seq=1
+asm_flags=2
+rank=2
+q1=./Yeast_matepair3kb_100x_1.fastq
+q2=./Yeast_matepair3kb_100x_2.fastq
