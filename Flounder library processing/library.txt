@@ -1,0 +1,1 @@
+Lib1    TAB     barcodepairreadflounder_BAC_PE_Lflounder_BAC_PE_R.tab.txt     150000  0.4     FR
