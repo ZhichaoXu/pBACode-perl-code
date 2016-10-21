@@ -1,0 +1,1 @@
+Lib1    bwa     barcodepairread_singleYeast_BAC_notI_LheadYeast_BAC_notI_Rhead_1.fa     barcodepairread_singleYeast_BAC_notI_LheadYeast_BAC_notI_Rhead_2.fa     150000  0.4     FR
