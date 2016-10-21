@@ -80,6 +80,9 @@ perl barcoderead.pl configure_BAC.txt left
 perl barcoderead.pl configure_BAC.txt right
 perl barcodepairread_coordinate.pl configure_BAC.txt
 
+SSPACE assembly
+SSPACE_Standard_v3.0.pl -l library.txt -s <ALLPATHS-LG aeembly> -T 8 -b sspace_out
+
 Pipeline to locate BAC by barcode in 5D
 ##Pipeline input: filename.txt. All 36 pooled BAC fastq file names should be add to the file. Other parameters are already set.
 ##Pipeline output: Flatfish_BAC_library_3Dcross_cutoff_<threshold>.out, format: <Clone location>[TAB]<left barcode>
