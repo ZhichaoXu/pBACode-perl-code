@@ -1,0 +1,3 @@
+library_name, project_name, organism_name, type, paired, frag_size, frag_stddev, insert_size, insert_stddev, read_orientation, genomic_start, genomic_end 
+flounder_220,flounder_genome_assembly,flounder,fragment,1,220,50,,,inward,0,0
+flounder_2800,flounder_genome_assembly,flounder,jumping,1,,,2750,500,outward,0,0
