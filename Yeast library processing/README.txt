@@ -32,6 +32,7 @@ perl barcodeRMvectorSitePost.pl configure_pool.txt
 perl barcodePostpool.pl configure_pool.txt
 
 SOAPdenovo2 assembly
+#Configuration files for SOAPdenovo2 assembly: soapdenovo_config_file
 SOAPdenovo-127mer all -s soapdenovo_config_file -o yeast -K 81 -R -p 8 -L 500
 
 Pipeline to process yeast BAC-PE data
@@ -69,6 +70,9 @@ perl barcodeLoci.pl configure_BAC.txt right
 #Pair BAC-PEs
 perl S288CchrLen.pl configure_BAC.txt
 perl barcodepairDistance.pl configure_BAC.txt
+
+SSPACE assembly
+SSPACE_Standard_v3.0.pl -l library.txt -s contig_81.scafSeq.fa -T 8 -z 500 -b sspace_out
 
 Pipeline to locate BAC by barcode in 3D
 ##Pipeline input:  filename.txt. All 36 pooled BAC fastq file names should be add to the file. Other parameters are already set.
