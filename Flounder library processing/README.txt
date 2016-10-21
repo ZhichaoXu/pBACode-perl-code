@@ -40,7 +40,7 @@ RunAllPathsLG PRE=$PWD REFERENCE_NAME=flounder.genome DATA_SUBDIR=data RUN=run S
 Pipeline to process flounder BAC-PE data
 ##Pipeline input: flounder_BAC_PE_part<1/2/3>_<L/R>_<1/2>.fastq: raw read files.
                   barcodePostpoolflounder_BAC_barcodepair_part<1/2/3>.txt: barcode pair file
-                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". Other parameters have already been set.
+                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". The prefix of reference sequence file should be added to the line "genome". Other parameters have already been set.
 ##Pipeline output: barcodepairDistanceflounder_BAC_PE_part1_Lflounder_BAC_PE_part1_RbarcodePostpoolflounder_BAC_barcodepair_part1.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 
                   barcodepairreadflounder_BAC_PE_part<1/2/3>_Lflounder_BAC_PE_part<1/2/3>_R.tab.txt, tab delimited file for SSPACE input, format: <left end scaffold ID>[TAB]<left end starting coordinate>[TAB]<left end ending coordinate>[TAB]<right end scaffold ID>[TAB]<right end starting coordinate>[TAB]<right end ending coordinate>
 #Merge mates of mated reads using FLASH
