@@ -1,0 +1,3 @@
+group_name,library_name,file_name
+flounder_220, flounder_220,./flounder_raw_?.fastq
+flounder_2800, flounder_2800,./flounder_3kb_matepair_?.fastq
