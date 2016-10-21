@@ -20,6 +20,7 @@ Pipeline to extract barcode pairs from BAC library using pBACode-2
 ##Pipeline input: flounder_BAC_barcodepair_part<1/2/3>_<1/2>.fastq: raw read files.
                   configure_pool.txt: configeration file. the prefix of raw read files should be added to the line "postpool_reads". Other parameters have already been set.
 ##Pipeline output: barcodePostpoolflounder_BAC_barcodepair_part<1/2/3>.txt, format: <left barcode>:<rightbarcode>[TAB]<read count>
+                   barcodepairreadflounder_BAC_PE_part<1/2/3>_Lflounder_BAC_PE_part<1/2/3>_R.tab.txt, tab delimited file for SSPACE input
 #Merge mates of mated reads using FLASH
 perl PEflash101.pl configure_pool.txt postpool
 #Extract raw paired barcodes
@@ -29,7 +30,8 @@ perl barcodePostpool.pl configure_pool.txt
 
 Pipeline to process flounder BAC-PE data
 ##Pipeline input: flounder_BAC_PE_part<1/2/3>_<L/R>_<1/2>.fastq: raw read files.
-                  configure_BAC.txt: configeration file. the prefix of raw read files should be added to the line "left_reads" and "right_reads". Other parameters have already been set.
+                  barcodePostpoolflounder_BAC_barcodepair_part<1/2/3>.txt: barcode pair file
+                  configure_BAC.txt: configeration file. The prefix of raw read files should be added to the line "left_reads" and "right_reads". The prefix of barcode pair file should be added to the line "pool_file". Other parameters have already been set.
 ##Pipeline output: barcodepairDistanceflounder_BAC_PE_part1_Lflounder_BAC_PE_part1_RbarcodePostpoolflounder_BAC_barcodepair_part1.txt, format: <left barcode>[space]<right barcode>[TAB]<chromosome>[TAB]<starting coordinate>[TAB]<ending coordinate>[TAB]<estimated BAC size>; 
 #Merge mates of mated reads using FLASH
 perl flashBarcode.pl configure_BAC.txt left
@@ -63,15 +65,13 @@ perl barcodeLoci.pl configure_BAC.txt right
 #Pair BAC-PEs
 perl flounderchrLen.pl configure_BAC.txt
 perl barcodepairDistance.pl configure_BAC.txt
-
-Pipeline to generate input for SSPACE assembler
-##Pipeline output: barcodepairreadflounder_BAC_PE_part<1/2/3>_Lflounder_BAC_PE_part<1/2/3>_R.tab.txt, tab delimited file for SSPACE input
+#To generate input for SSPACE assembler
 perl barcoderead.pl configure_BAC.txt left
 perl barcoderead.pl configure_BAC.txt right
 perl barcodepairread_coordinate.pl configure_BAC.txt
 
 Pipeline to locate BAC by barcode in 5D
-##Pipeline input: all fastq file names should be add to the file named filename.txt. Other parameters are already set.
+##Pipeline input: filename.txt. All 36 pooled BAC fastq file names should be add to the file. Other parameters are already set.
 ##Pipeline output: Flatfish_BAC_library_3Dcross_cutoff_<threshold>.out, format: <Clone location>[TAB]<left barcode>
 #To extract barcodes
 perl system.pl filename.txt configure_pooling.txt
